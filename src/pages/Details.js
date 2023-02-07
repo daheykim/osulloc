@@ -1,4 +1,8 @@
-export default function Details(props) {
-  const {bests} = props
+export default function Details() {
+  return (
+    <>
+      
+    </>
+  )
 
 }

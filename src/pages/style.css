@@ -1,13 +1,38 @@
+.visual_img {
+  width: 100%;
+  max-width: 1360px;
+  background-position: center;
+  margin: 50px auto;
+}
+
 .product_box {
   width: 85%;
+  max-width: 1360px;
   margin: 0 auto;
 }
 .product {
   float: left;
+  width: 25%;
+/*  border-bottom: 1px solid #eee;
+  box-sizing: border-box; */
 }
 .img_div {
-  width: 33.3%;
+  width: 100%;
 }
-.product h3{
+.img_div:hover {
+  width: 100%;
+}
+.img_div img {
+  width: 100%;
+  max-width: 220px;
+}
+.product .title{
   font-size: 16px;
+  margin-left: 10px;
+  color: #444;
 }
+.product .price{
+  font-size: 14px;
+  margin-left: 10px;
+}
+

@@ -8,6 +8,10 @@ export default function TeaSet() {
   const [index, setIndex] = useState('')
 
   return (
+    <>
+      <div className='visual_img'>
+      <img src={process.env.PUBLIC_URL+'/images/01_teaSet/banner_set.jpg'} alt="" />
+    </div>
     <div className='product_box'>
     {
       teaData.map((item, i) => {
@@ -23,10 +27,8 @@ export default function TeaSet() {
           }}  >{
             image === true && index === i ? <img src={item.imageOn} alt="" /> : <img src={item.imageOff} alt="" />
           }</div>
-
-
-            <h3>{item.title}</h3>
-            <p>{item.price}원</p>
+            <p className='title'>{item.title}</p>
+            <p className='price'>{item.price}원</p>
             </>
             : null
         }
@@ -35,5 +37,6 @@ export default function TeaSet() {
       })
     }
     </div>
+    </>
   )
 }

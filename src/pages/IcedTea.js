@@ -2,7 +2,7 @@ import { useState } from 'react'
 import teaData from './teaData'
 import './style.css';
 
-export default function BlackTea() {
+export default function IcedTea() {
 
   let [image, setImage] = useState(false)
   const [index, setIndex] = useState('')
@@ -10,14 +10,14 @@ export default function BlackTea() {
   return (
     <>
     <div className='visual_img'>
-      <img src={process.env.PUBLIC_URL+'/images/04_blackTea/banner_black.jpg'} alt="" />
+      <img src={process.env.PUBLIC_URL+'/images/07_icedTea/banner_iced.jpg'} alt="" />
     </div>
     <div className='product_box'>
     {
       teaData.map((item, i) => {
         return(
           <div className='product'>
-          {item.group === 'blacktea' ?
+          {item.group === 'icedtea' ?
             <> 
           <div className='img_div' onMouseOver={() => {
             setImage(true)
