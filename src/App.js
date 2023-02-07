@@ -1,6 +1,8 @@
 import './App.css';
 import { Routes, Route, Link, useNavigate } from 'react-router-dom';
-import {Navbar, Container, Nav, Row, Col} from 'react-bootstrap';
+import { Container,Navbar, Nav } from 'react-bootstrap';
+
+
 
 import TeaSet from './pages/TeaSet';
 import Masterpiece from './pages/Masterpiece';
@@ -9,9 +11,17 @@ import BlackTea from './pages/BlackTea';
 import BlendedTea from './pages/BlendedTea';
 import HerbalTea from './pages/HerbalTea';
 import MilkTea from './pages/MilkTea';
+import About from './pages/About';
 import Cart from './pages/Cart';
+import teaData from './pages/teaData';
+
+
 
 function App() {
+
+  const navigator = useNavigate()
+
+  
   return (
     <div className="App">
       <Navbar bg="light" variant="light">
@@ -25,6 +35,7 @@ function App() {
             <Nav.Link onClick={() => {navigator('/blendedtea')}}>블렌디드티</Nav.Link>
             <Nav.Link onClick={() => {navigator('/herbaltea')}}>허브티</Nav.Link>
             <Nav.Link onClick={() => {navigator('/milktea')}}>밀크티/아이스티</Nav.Link>
+            <Nav.Link onClick={() => {navigator('/about')}}>About</Nav.Link>
             <Nav.Link onClick={() => {navigator('/cart')}}>장바구니</Nav.Link>
           </Nav>
         </Container>
@@ -32,14 +43,15 @@ function App() {
 
       <Routes>
         <Route path='/'></Route>
-        <Route path='/teaset' element={<TeaSet />}></Route>
-        <Route path='/masterpiece' element={<Masterpiece />}></Route>
-        <Route path='/greetea' element={<GreenTea />}></Route>
-        <Route path='/blacktea' element={<BlackTea />}></Route>
-        <Route path='/blendedtea' element={<BlendedTea />}></Route>
-        <Route path='/herbaltea' element={<HerbalTea />}></Route>
-        <Route path='/milktea' element={<MilkTea />}></Route>
-        <Route path='/cart' element={<Cart />}></Route>
+        <Route path='teaset' element={<TeaSet teaData = {teaData}/>}></Route>
+        <Route path='masterpiece' element={<Masterpiece />}></Route>
+        <Route path='greetea' element={<GreenTea />}></Route>
+        <Route path='blacktea' element={<BlackTea />}></Route>
+        <Route path='blendedtea' element={<BlendedTea />}></Route>
+        <Route path='herbaltea' element={<HerbalTea />}></Route>
+        <Route path='milktea' element={<MilkTea />}></Route>
+        <Route path='about' element={<About />}></Route>
+        <Route path='cart' element={<Cart />}></Route>
 
       </Routes>
     </div>
