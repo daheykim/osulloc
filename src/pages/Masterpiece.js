@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 import teaData from './teaData'
 import './style.css';
 
@@ -9,16 +10,18 @@ export default function Masterpiece() {
 
   return (
     <>
-    <div className='visual_img'>
+      <div className='visual_img'>
       <img src={process.env.PUBLIC_URL+'/images/02_masterpiece/banner_master.jpg'} alt="" />
     </div>
     <div className='product_box'>
     {
       teaData.map((item, i) => {
         return(
-          <div className='product'>
+          <>
           {item.group === 'masterpiece' ?
-            <> 
+            <Link to={
+              `/detail/${i}`
+            } className='product'>
           <div className='img_div' onMouseOver={() => {
             setImage(true)
             setIndex(i)
@@ -29,10 +32,10 @@ export default function Masterpiece() {
           }</div>
             <p className='title'>{item.title}</p>
             <p className='price'>{item.price}원</p>
-            </>
+            </Link>
             : null
         }
-          </div>
+          </>
         )
       })
     }

@@ -4,7 +4,6 @@
   background-position: center;
   margin: 50px auto;
 }
-
 .product_box {
   width: 85%;
   max-width: 1360px;
@@ -13,11 +12,12 @@
 .product {
   float: left;
   width: 25%;
-/*  border-bottom: 1px solid #eee;
-  box-sizing: border-box; */
+  text-decoration: none;
 }
 .img_div {
   width: 100%;
+  border-left: 1px solid #eee;
+  box-sizing: border-box;
 }
 .img_div:hover {
   width: 100%;
@@ -34,5 +34,115 @@
 .product .price{
   font-size: 14px;
   margin-left: 10px;
+  color: #444;
 }
 
+.detail_wrap {
+  width: 100%;
+}
+
+.detail_box {
+  display: flex;
+  max-width: 1000px;
+  margin: 50px auto;
+}
+.detail_box .detail_left .detail_img {
+  background-color: #f8f9fb;
+  width: 500px;
+  height: 400px;
+  text-align: center;
+  margin-right: 100px;
+}
+.detail_box .detail_left .point_box {
+  background-color: #f8f9fb;
+  width: 500px;
+  height: 100px;
+  color: #777;
+  font-size: 11px;
+  display: flex;
+  justify-content: space-evenly
+}
+.detail_box .detail_right {
+  width: calc(100% - 500px - 20px );
+}
+.detail_box .detail_right h4 {
+  margin-bottom: 20px;
+}
+.detail_box .detail_right .dsec {
+  color: #666;
+  font-size: 11px;
+}
+.detail_box .detail_right .price {
+  text-align: right;
+  margin-top: 50px;
+}
+.detail_box .detail_right .price span {
+  font-size: 18px;
+  font-weight: bold;
+}
+.detail_box .detail_right .count {
+  font-size: 12px;
+  width: 100%; height: 30px;
+  background-color: #f8f9fb;
+  line-height: 30px;
+  margin-top: 30px;
+}
+.detail_box .detail_right .count span{
+  float: left;
+}
+
+.detail_box .detail_right .count .count_btn button,
+.detail_box .detail_right .count .count_btn input {
+  width: 30px; height: 30px;
+  float: right;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+}
+.detail_box .detail_right .total {
+  width: 100%;
+  color: #6c801a;
+  margin: 30px 0;
+}
+.detail_box .detail_right .total span:nth-child(2) {
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+}
+.detail_box .detail_right .cart {
+  background-color: #313131;
+}
+.detail_box .detail_right .buy {
+  background-color: #6c801a;
+}
+
+.detail_info {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+.detail_info img {
+  width: 100%;
+}
+
+.mb-3 {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+.nav-link {
+  color: #313131;
+}
+.nav-tabs {
+  --bs-nav-tabs-link-active-color: #6c801a;
+  --bs-nav-link-hover-color : #6c801a;
+}
+
+.notice_box ul .notice_title {
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+.notice_box ul li {
+  list-style: square;
+  color: #666;
+  margin-bottom: 15px;
+}

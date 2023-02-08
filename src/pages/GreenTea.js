@@ -1,24 +1,27 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 import teaData from './teaData'
 import './style.css';
 
-export default function GreenTea() {
+export default function greenTea() {
 
   let [image, setImage] = useState(false)
   const [index, setIndex] = useState('')
 
   return (
     <>
-    <div className='visual_img'>
+      <div className='visual_img'>
       <img src={process.env.PUBLIC_URL+'/images/03_greenTea/banner_green.jpg'} alt="" />
     </div>
     <div className='product_box'>
     {
       teaData.map((item, i) => {
         return(
-          <div className='product'>
+          <>
           {item.group === 'greentea' ?
-            <> 
+            <Link to={
+              `/detail/${i}`
+            } className='product'>
           <div className='img_div' onMouseOver={() => {
             setImage(true)
             setIndex(i)
@@ -29,10 +32,10 @@ export default function GreenTea() {
           }</div>
             <p className='title'>{item.title}</p>
             <p className='price'>{item.price}원</p>
-            </>
+            </Link>
             : null
         }
-          </div>
+          </>
         )
       })
     }

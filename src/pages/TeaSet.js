@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 import teaData from './teaData'
 import './style.css';
 
@@ -16,9 +17,11 @@ export default function TeaSet() {
     {
       teaData.map((item, i) => {
         return(
-          <div className='product'>
+          <>
           {item.group === 'teaset' ?
-            <> 
+            <Link to={
+              `/detail/${i}`
+            } className='product'>
           <div className='img_div' onMouseOver={() => {
             setImage(true)
             setIndex(i)
@@ -29,10 +32,10 @@ export default function TeaSet() {
           }</div>
             <p className='title'>{item.title}</p>
             <p className='price'>{item.price}원</p>
-            </>
+            </Link>
             : null
         }
-          </div>
+          </>
         )
       })
     }

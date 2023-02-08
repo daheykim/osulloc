@@ -2,3 +2,49 @@
   font-size: 12px;
   font-family: 'Noto Sans KR', sans-serif;
 }
+.navbar-nav {
+  justify-content: space-around;
+}
+
+.main_logo {
+  width: 80px;
+  cursor: pointer;
+}
+
+.main_logo img {
+  width: 100%;
+}
+.main_visual .carousel-caption {
+  color: #444;
+  text-align: left;
+}
+.main_visual .carousel-item {
+  max-width: 1920px;
+}
+.main_visual .carousel-caption h3{
+  font-size: 40px;
+  margin-bottom: 100px;
+}
+.main_visual .carousel-caption p{
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+
+.best .carousel-item {
+  width: 20%;
+  background-color: #444;
+  display: block;
+}
+
+.best_wrap .best_product {
+  text-decoration: none;
+  color: #444;
+}
+
+.best_wrap .best_product_link {
+  text-decoration: none;
+  color: #444;
+}
+
+
