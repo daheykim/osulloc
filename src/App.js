@@ -27,7 +27,7 @@ function App() {
     <div className="App">
       <Navbar bg="light" variant="light">
         <Container>
-          <Navbar.Brand className="main_logo" onClick={() => navigator('/')}>
+          <Navbar.Brand className="main_logo" onClick={() => navigator('https://github.com/daheykim/osulloc.git')}>
             <img src={process.env.PUBLIC_URL + '/images/00_site/logo_black.png'} alt="" />
           </Navbar.Brand>
           <Nav className="me-auto">
@@ -44,13 +44,13 @@ function App() {
       </Navbar>
 
       <Routes>
-        <Route path='/' element={
+        <Route path='https://github.com/daheykim/osulloc.git' element={
           <>
             <Carousel className='main_visual' variant="dark">
               <Carousel.Item interval={4000}>
                 <img
                   className="d-block w-100"
-                  src="/images/00_site/main_banner01.jpg"
+                  src={process.env.PUBLIC_URL + "/images/00_site/main_banner01.jpg"}
                   alt="First slide"
                 />
                 <Carousel.Caption>
@@ -64,7 +64,7 @@ function App() {
               <Carousel.Item interval={4000}>
                 <img
                   className="d-block w-100"
-                  src="/images/00_site/main_banner02.png"
+                  src={process.env.PUBLIC_URL + "/images/00_site/main_banner02.png"}
                   alt="Second slide"
                 />
                 <Carousel.Caption>
@@ -78,7 +78,7 @@ function App() {
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="/images/00_site/main_banner03.png"
+                  src={process.env.PUBLIC_URL + "/images/00_site/main_banner03.png"}
                   alt="Third slide"
                 />
                 <Carousel.Caption>
@@ -92,7 +92,7 @@ function App() {
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="/images/00_site/main_banner04.png"
+                  src={process.env.PUBLIC_URL + "/images/00_site/main_banner04.png"}
                   alt="forth slide"
                 />
                 <Carousel.Caption>
@@ -106,7 +106,7 @@ function App() {
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="/images/00_site/main_banner05.png"
+                  src={process.env.PUBLIC_URL + "/images/00_site/main_banner05.png"}
                   alt="fifth slide"
                 />
                 <Carousel.Caption>
