@@ -27,7 +27,7 @@ function App() {
     <div className="App">
       <Navbar bg="light" variant="light">
         <Container>
-          <Navbar.Brand className="main_logo" onClick={() => navigator('https://daheykim.github.io/osulloc/')}>
+          <Navbar.Brand className="main_logo" onClick={() => navigator('/osulloc/')}>
             <img src={process.env.PUBLIC_URL + '/images/00_site/logo_black.png'} alt="" />
           </Navbar.Brand>
           <Nav className="me-auto">
@@ -44,7 +44,7 @@ function App() {
       </Navbar>
 
       <Routes>
-        <Route path='https://daheykim.github.io/osulloc/' element={
+        <Route path='/osulloc/' element={
           <>
             <Carousel className='main_visual' variant="dark">
               <Carousel.Item interval={4000}>
