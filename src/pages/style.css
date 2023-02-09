@@ -6,6 +6,7 @@
 }
 .product_box {
   width: 85%;
+  overflow: hidden;
   max-width: 1360px;
   margin: 0 auto;
 }

@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom"
 import './style.css'
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCoins, faLeaf, faCartShopping, faGift, faL } from "@fortawesome/free-solid-svg-icons"
+import { faCoins, faLeaf, faCartShopping, faGift } from "@fortawesome/free-solid-svg-icons"
 
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';

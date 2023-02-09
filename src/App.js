@@ -4,6 +4,10 @@ import { Container, Navbar, Nav, Row, Col } from 'react-bootstrap';
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import teaData from './pages/teaData';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCoins, faComments, faLocationDot, faMugHot, faQuestionCircle, faUser } from "@fortawesome/free-solid-svg-icons"
+import { faTiktok, faYoutube, faInstagram } from '@fortawesome/free-brands-svg-icons'
+
 
 
 import TeaSet from './pages/TeaSet';
@@ -42,7 +46,7 @@ function App() {
           </Nav>
         </Container>
       </Navbar>
-
+      
       <Routes>
         <Route path='/osulloc/' element={
           <>
@@ -145,7 +149,6 @@ function App() {
           </>
         }>
         </Route>
-
         <Route path='teaset' element={<TeaSet teaData={teaData} />}></Route>
         <Route path='masterpiece' element={<Masterpiece />}></Route>
         <Route path='greetea' element={<GreenTea />}></Route>
@@ -156,6 +159,81 @@ function App() {
         <Route path='cart' element={<Cart />}></Route>
         <Route path='detail/:id' element={<Details datas={datas} />}></Route>
       </Routes>
+
+      <footer className='footer'>
+        <div className='footer_top'>
+          <ul className='sns_link'>
+            <li><FontAwesomeIcon icon ={faUser} /></li>
+            <li><FontAwesomeIcon icon ={faTiktok} /></li>
+            <li><FontAwesomeIcon icon ={faYoutube} /></li>
+            <li><FontAwesomeIcon icon ={faInstagram} /></li>
+          </ul>
+        </div>
+        <div className='footer_mid'>
+          <div className='mid_left'>
+            <ul>
+              <li>고객상담센터 · 주문/배송문의</li>
+              <li className='contact'>080-805-5555</li>
+              <li>평일 09:30 - 17:00 (점심 11:30 - 13:00)</li>
+            </ul>
+            <ul>
+              <li>특판 대량구매 문의</li>
+              <li className='contact'>help@osulloc.com<br />카카오톡 ID: osullocmall</li>
+              <li>평일 09:30 - 17:00 (점심 11:30 - 13:00)</li>
+            </ul>
+          </div> {/* mid_left */}
+
+          <ul className='mid_right'>
+            <li>
+              <FontAwesomeIcon icon ={faLocationDot} />
+              <p>매장안내</p>
+            </li>
+            <li>
+              <FontAwesomeIcon icon ={faMugHot} />
+              <p>멤버십혜택</p>
+            </li>
+            <li>
+              <FontAwesomeIcon icon ={faQuestionCircle} />
+              <p>FAQ</p>
+            </li>
+            <li>
+              <FontAwesomeIcon icon ={faComments} />
+              <p>1:1문의</p>
+            </li>
+            <li>
+              <FontAwesomeIcon icon ={faCoins} />
+              <p>뷰티포인트<br />추후적립</p>
+            </li>
+          </ul>
+        </div>
+        <div className='footer_bot'>
+          <div className='bot_left'>
+            <img className="footer_logo" src={process.env.PUBLIC_URL + "/images/00_site/footer_logo.png"} alt="footer logo"/>
+          </div>
+          <div className='bot_center'>
+            <ul className='info_list01'>
+              <li>회사 소개</li>
+              <li>서비스 이용약관</li>
+              <li>개인정보 처리방침</li>
+              <li>영상정보 처리방침</li>
+              <li>뷰티포인트</li>
+              <li>임직원할인</li>
+              <li>사이트맵</li>
+              <li>전자공고</li>
+            </ul>
+            <ul className='info_list02'>
+              <li>㈜ 오설록</li>
+              <li>대표이사:서혁제 주소:서울특별시 용산구 한강대로 100, 14층(한강로2가) 사업자등록번호: 390-87-01499</li>
+              <li>통신판매업신고번호:2019-서울용산-1173호 호스팅제공자: ㈜오설록</li>
+              <li>(주)오설록은 오설록 브랜드를 제외한 입점 브랜드에 대해서는 통신판매중개자 이며 통신판매의 당사자가 아닙니다.<br />
+              따라서 입점판매자가 등록한 상품정보 및 거래에 대해 책임을 지지 않습니다.</li>
+            </ul>
+          </div>
+          <div className='bot_right'>
+            <img src={process.env.PUBLIC_URL + "/images/00_site/escrow.jpg"} alt="escrow logo"/>
+          </div>
+        </div>
+      </footer>
 
     </div>
   )

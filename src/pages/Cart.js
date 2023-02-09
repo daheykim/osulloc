@@ -18,6 +18,7 @@ export default function Cart() {
             <th>금액</th>
             <th>수량</th>
             <th>증감</th>
+            <th>총 금액</th>
           </tr>
         </thead>
         <tbody>
@@ -25,13 +26,14 @@ export default function Cart() {
             return (
               <tr key={i}>
                 <td>{state.cart[i].title}</td>
-                <td>{state.cart[i].price * state.cart[i].count}</td>
-                <td>{state.cart[i].count}</td>
+                <td>{state.cart[i].price}원</td>
+                <td>{state.cart[i].count}개</td>
                 <td>
                   <button onClick={() => {dispatch(addCount(state.cart[i].id))}}>+</button>
                   <button onClick={() => {dispatch(subCount(state.cart[i].id))}}>-</button>
                   <button onClick={() => {dispatch(deleteItem(state.cart[i].id))}}>삭제</button>
                 </td>
+                <td>{state.cart[i].price * state.cart[i].count}원</td>
               </tr>
             )
           })
