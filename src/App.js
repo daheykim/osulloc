@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import teaData from './pages/teaData';
 
+
 import TeaSet from './pages/TeaSet';
 import Masterpiece from './pages/Masterpiece';
 import GreenTea from './pages/GreenTea';
@@ -20,6 +21,7 @@ function App() {
 
   const navigator = useNavigate();
   const [datas] = useState(teaData);
+
 
   return (
     <div className="App">
@@ -118,23 +120,24 @@ function App() {
             </Carousel>
 
             <Container className='best_wrap'>
-              <h4>오늘은 어떤 차를 마셔볼까요?</h4>
-              <Row className='best_box'>
+              <h4 className='best_title'>오늘은 어떤 차를 마셔볼까요?</h4>
+              <Row className='best_boxes'>
                 {
                   datas.map((data, i) => {
+                    
                     return (
                       <>
-                        {data.group === 'teaset' ? 
-                        <Link to={`/detail/${i}`} className="best_product_link">
-                        <div classN>
+                        {data.best === true ? 
+                        <Link to ={`/detail/${i}`} className ="best_product_link">
                           <img src={data.imageOff} alt="" style={{ width: 200 }} />
                           <h6>{data.title}</h6>
                           <p>{data.price}원</p>
-                        </div>
                         </Link>
-                          : null}
-                      </>
+                          : null
+                          }
+                     </> 
                     )
+                    
                   })
                 }
               </Row>
@@ -157,6 +160,7 @@ function App() {
     </div>
   )
 };
+
 
 
 export default App;

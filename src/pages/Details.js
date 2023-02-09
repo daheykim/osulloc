@@ -1,24 +1,20 @@
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import './style.css'
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCoins, faLeaf, faCartShopping, faGift } from "@fortawesome/free-solid-svg-icons"
+import { faCoins, faLeaf, faCartShopping, faGift, faL } from "@fortawesome/free-solid-svg-icons"
 
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import { useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import {addCount, subCount, addItem} from "./store"
+import { useDispatch} from "react-redux"
+import {addItem} from "./store"
 
 
 export default function Details(props) {
   const {datas} = props
   const {id} = useParams()
   const dispatch = useDispatch()
-  // const state = useSelector((state)=> {
-  //   return state;
-  // })
-
 
   const Button = styled.button`
     display : inline-block;
@@ -30,9 +26,22 @@ export default function Details(props) {
     }
 `
   const [key, setKey] = useState('detailInfo');
+  const [modal, setModal] = useState(false);
 
   return (
     <div className="detail_wrap">
+      { modal === true
+      ? <>
+        <div className="modal_box">
+            <h6>장바구니에 담겼습니다</h6>
+            <Link to={'/cart'}><button className="btn modal_btn01">장바구니 바로가기</button></Link>
+            <button onClick={()=> {
+              setModal(false)
+            }} className="btn modal_btn02">쇼핑 계속하기</button>
+          </div>
+        </> 
+        : null
+    }
       <div className="detail_box">
         <div className="detail_left">
           <div className="detail_img">
@@ -50,29 +59,16 @@ export default function Details(props) {
           <h4>{datas[id].title}</h4>
           <p className="dsec">{datas[id].desc}</p>
           <p className="price"><span>{datas[id].price}</span>원</p> 
-          <div>
-            
-            {/* <div className="count">
-              <span>구매수량</span>
-              <div className="count_btn">
-                <button onClick={() => {dispatch
-                (addCount(1))}}>+</button>
-                <p>{state.detail.counter}</p>
-                <button className="down" onClick={() => {dispatch(subCount(1))}}>-</button>
-              </div>
-            </div> */}
-          </div>
 
+          <Button className="cart" onClick={() => {
+            dispatch(addItem({id:datas[id].id, title:datas[id].title, price:datas[id].price, count:1}))
 
-          <div className="total">
-            <span>상품금액 합계</span>
-            <span>{datas[id].price}원</span>
-          </div>
-          <Button className="cart" onClick={()=> {dispatch(addItem({id: datas[id].id, title: datas[id].title, price: datas[id].price}))}}>장바구니</Button>
+            setModal(true)
+          }}>장바구니</Button>
           <Button className="buy">바로구매</Button>
         </div> {/* detail_right */}
       </div>
-   
+      
       <Tabs
       id="controlled-tab-example"
       activeKey={key}
@@ -118,8 +114,9 @@ export default function Details(props) {
         </div>
       </Tab>
     </Tabs>
-
     </div>
   )
 }
+
+
 

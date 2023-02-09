@@ -1,48 +1,36 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
-const detail = createSlice({
-  name : 'detail', 
-  initialState : {counter : 1},
-  reducers: {
-    addCount(state, action){
-      state.counter += action.payload
-    },
-    subCount(state, action){
-      if (state.counter > 1) {
-        state.counter--
-      }
-    }
-  }
-})
-
-export const {addCount, subCount} = detail.actions
-
-
 const cart = createSlice({
   name: 'cart',
-  initialState: {},
+  initialState: [],
   reducers: {
-/*     addCount(state, action) {
-      
-    }, */
-    addItem(state, action) {
+    addCount(state, action) {
+      const index = state.findIndex((i) => {return i.id === action.payload})
+      state[index].count++
+    },
+    subCount(state, action){
+      const index = state.findIndex((i) => {return i.id === action.payload})
+      if(state[index].count > 1) {state[index].count--}
+    },
+    deleteItem(state, action){
+      const index = state.findIndex((i) => {return i.id === action.payload})
+      state.splice(index,1)
+    },
+    addItem(state,action){
       const index = state.findIndex((i) => {return i.id === action.payload.id})
-
-      if(index > -1 ) {
-        state[index].count++
-      } else {
-        state.push(action.payload)
-      }
-    
+    if(index > -1) {
+      state[index].count++
+    } else {
+      state.push(action.payload)
     }
   }
+}
 })
 
-export const {addItem} = cart.actions
+export const {addCount, subCount, deleteItem, addItem} = cart.actions
 
 export default configureStore({
     reducer: {
-      detail : detail.reducer,
       cart : cart.reducer
   }
 })

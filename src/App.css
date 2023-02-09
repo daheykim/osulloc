@@ -36,15 +36,22 @@
   background-color: #444;
   display: block;
 }
-
-.best_wrap .best_product {
-  text-decoration: none;
-  color: #444;
+.best_title {
+  margin: 30px 0;
+}
+.best_boxes {
+  width: 1360px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.best_wrap .best_product_link {
+.best_box {
+  width: 20%;
+}
+.best_product_link {
+  display: block;
   text-decoration: none;
   color: #444;
+  width: 20%;
 }
-
 
