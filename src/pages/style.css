@@ -186,3 +186,12 @@
 button{
   border: 1px solid #ccc;
 }
+
+.totla_price {
+  width: 100%;
+  max-width: 1360px;
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}

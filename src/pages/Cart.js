@@ -7,6 +7,7 @@ import './style.css'
 export default function Cart() {
   const state = useSelector((state) => {return state})
   const dispatch = useDispatch()
+  let totalPrice = 0
 
   return (
     <>
@@ -23,6 +24,7 @@ export default function Cart() {
         </thead>
         <tbody>
           {state.cart.map((item ,i) => {
+            totalPrice += state.cart[i].price * state.cart[i].count
             return (
               <tr key={i}>
                 <td>{state.cart[i].title}</td>
@@ -40,6 +42,10 @@ export default function Cart() {
           }
         </tbody>
     </Table>
+    <div className='totla_price'>
+          <span>총 합계 : </span>
+          <span>{totalPrice}원</span>
+        </div>
     </>
   )
 }
